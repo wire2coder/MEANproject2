@@ -1,0 +1,16 @@
+{
+  "name": "adminface",
+  "version": "1.0.0",
+  "description": "Simple client management",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose":"*",
+    "body-parser":"*"
+  },
+  "author": "Terry Tim",
+  "license": "ISC"
+}
