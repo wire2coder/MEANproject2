@@ -17,6 +17,7 @@ mongoose.connect('mongodb://localhost/patracking', function(err) {
 var db = mongoose.connection;
 
 app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/bower_components'));
 app.use(bodyParser.json());
 
 app.use('/api/customers', customers);

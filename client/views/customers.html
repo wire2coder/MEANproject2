@@ -1,0 +1,35 @@
+<h2 class="sub-header">Customers</h2>
+
+<div class="table-responsive" ng-init="getCustomers()" >
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="customer in customers">
+                <td>{{customer._id}}</td>
+                <td>{{customer.last_name}}, {{customer.first_name}} </td>
+                <td></td>
+                <td>{{customer.email}}</td>
+
+                <td>
+                    <!--get all info for the customer-->
+                    <a href="" class="btn btn-primary">Details</a>
+                    <a href="" class="btn btn-default">Edit</a>
+                    <!--ng-click-->
+                    <button class="btn btn-danger" ng-click="getCustomerDetails(id1)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
