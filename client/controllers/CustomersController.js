@@ -12,9 +12,18 @@ myApp.controller('CustomersController', ['$scope', '$http', '$location', '$route
             });
         };
 
-        $scope.getCustomerDetails = function (id1) {
+        $scope.getCustomerDetails = function() {
+            // id1 is coming from >> client/app.js >> URL
+            var id1 = $routeParams.id1;
 
+            $http.get('/api/customers/' + id1).success(function (response) {
+                $scope.customer = response;
+            });
         };
+
+        $scope.updateCustomer = function() {
+            HERE
+        }
 
     }
 ]);

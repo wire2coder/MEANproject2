@@ -11,10 +11,16 @@ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(function ($routeProvider) {
 
     // localhost:3000/#customers
-    $routeProvider.when('/customers', {
+    $routeProvider
+        .when('/customers', {
         controller: 'CustomersController',
         templateUrl: 'views/customers.html'
     })
+
+        .when('/customers/:id1', {
+            controller: 'CustomersController',
+            templateUrl: 'views/customer_details.html'
+        })
 
     .otherwise({
         redirectTo: '/'

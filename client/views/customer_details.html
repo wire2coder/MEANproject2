@@ -1,0 +1,29 @@
+<div ng-init="getCustomerDetails()">
+
+    <img class="pull-right img-small" src="img/tulips.jpg">
+    <div class="clearfix"></div>
+
+    <h2 class="sub-header"> Name: {{customer.last_name}}, {{customer.first_name}}</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>First name: {{customer.first_name}}</strong></li>
+        <li class="list-group-item"><strong>Last name: {{customer.last_name}}</strong></li>
+        <li class="list-group-item"><strong>Email: {{customer.email}}</strong></li>
+    </ul>
+    <br/>
+
+    <h3>Customer Invoices</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Service</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</div>
