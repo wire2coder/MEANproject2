@@ -13,7 +13,7 @@ router.get('/', function (req, res) {
         }
 
         res.json(result);
-    }, 15);
+    }, 15); // database result limit
 });
 
 // Get Customer
@@ -44,6 +44,7 @@ router.post('/', function (req, res) {
 });
 
 // Update Customer
+// localhost:3000/api/customers/id1
 router.put('/:id1', function (req, res) {
     var customerid = req.params.id1;
     var customer = req.body;

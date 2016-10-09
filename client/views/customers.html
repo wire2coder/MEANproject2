@@ -24,9 +24,9 @@
                     <!--get all info for the customer-->
                     <!--http://opsvm3.turner.com:3000/#customers/57f650ea9db57560717bb982-->
                     <a href="#/customers/{{customer._id}}" class="btn btn-primary">Details</a>
-                    <a href="" class="btn btn-default">Edit</a>
+                    <a href="#/customers/edit/{{customer._id}}" class="btn btn-default">Edit</a>
                     <!--ng-click-->
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" ng-click="deleteCustomer(customer._id)">Delete</button>
                 </td>
             </tr>
         </tbody>

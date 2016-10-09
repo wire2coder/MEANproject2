@@ -1,0 +1,33 @@
+<h2 class="sub-header">Edit Customer</h2>
+
+<form ng-init="getCustomerDetails()" ng-submit="updateCustomer()" >
+
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" name="first_name"
+               value="{{customer.first_name}}"
+               ng-model="customer.first_name"
+               placeholder="First Name">
+    </div>
+
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" name="last_name"
+               value="{{customer.last_name}}"
+               ng-model="customer.last_name"
+               placeholder="Last Name">
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email"
+               value="{{customer.email}}"
+               ng-model="customer.email"
+               placeholder="Email">
+    </div>
+
+    <pre>JSON data to submit: {{customer | json}}
+    </pre>
+
+    <button type="submit">Update</button>
+</form>
