@@ -1,0 +1,28 @@
+<h2 class="sub-header">Add Customer</h2>
+
+<form ng-submit="addCustomer()">
+
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" placeholder="First Name"
+               name="first_name"
+               ng-model="customerdata1.first_name"
+                >
+    </div>
+
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" placeholder="Last Name"
+               name="last_name"
+               ng-model="customerdata1.last_name"
+               >
+    </div>
+
+    <div class="form-group">
+
+    </div>
+
+    <button type="submit">Add</button>
+</form>
+
+<p> <pre>{{customerdata1 | json}}</pre> </p>

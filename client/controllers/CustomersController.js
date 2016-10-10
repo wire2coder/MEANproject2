@@ -21,6 +21,10 @@ myApp.controller('CustomersController', ['$scope', '$http', '$location', '$route
             });
         };
 
+        $scope.addCustomer = function () {
+            console.log($scope.customerdata1);
+        };
+
         $scope.updateCustomer = function () {
             // id1 is coming from client/app.js >> URL
             var id1 = $routeParams.id1;
@@ -39,6 +43,5 @@ myApp.controller('CustomersController', ['$scope', '$http', '$location', '$route
             });
         };
 
-        console.log('CustomersController initialized, AngularJS CRUD');
     } // function
 ]);
