@@ -53,7 +53,6 @@ module.exports.addInvoice = function (invoice, callback) {
     };
 
     Invoice.create(add, callback);
-
 };
 
 // Update an invoice
@@ -75,3 +74,12 @@ module.exports.updateInvoice = function (id1, invoice, callback) {
 
     Invoice.findOneAndUpdate(id1, update, callback)
 };
+
+// Remove Invoice
+module.exports.removeInvoice = function (id1, callback) {
+
+    var query = {_id: id1};
+
+    Invoice.remove(query, callback);
+};
+

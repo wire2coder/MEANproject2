@@ -61,6 +61,22 @@ router.put('/update/:id1', function (req, res) {
     });
 });
 
-HERE
+
+// Delete an invoice
+// localhost:3000/api/invoices
+router.delete('/:id1', function (req, res) {
+    var id1 = req.params.id1;
+
+    Invoice.removeInvoice(id1, function (err, result) {
+        if (err) {
+            res.send(err);
+        }
+
+        res.json(result);
+        console.log('Server: an invoice got deleted');
+    });
+
+
+});
 
 module.exports = router;
