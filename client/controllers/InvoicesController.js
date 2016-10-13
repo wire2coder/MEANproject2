@@ -6,6 +6,7 @@ myApp.controller('InvoicesController', ['$scope', '$http', '$location', '$routeP
 
         $scope.getInvoices = function () {
             $http.get('/api/invoices').success(function (response) {
+                console.log(response);
                 $scope.invoices = response;
             });
         };
@@ -13,11 +14,11 @@ myApp.controller('InvoicesController', ['$scope', '$http', '$location', '$routeP
         $scope.getInvoice = function () {
             var id1 = $routeParams.id1;
 
-            $http.get('/api/invoices/' + id1).success(function (response) {
-                //console.log(response);
-                $scope.invoicedata1 = response;
 
-                $scope.invoicedata1.customer_id = response.customer._id;
+            $http.get('/api/invoices/' + id1).success(function (response) {
+                console.log(response);
+                $scope.invoicedata1 = response;
+                $scope.customer_id1 = response.customer._id;
             });
         };
 
@@ -36,16 +37,14 @@ myApp.controller('InvoicesController', ['$scope', '$http', '$location', '$routeP
 
         $scope.updateInvoice = function () {
 
-            console.log($scope.invoicedata1);
-
-            /*
-            $http.put('/api/invoices/update/' + $scope.invoicedata1._id, $scope.invoicedata1).success(
+            $http.put('/api/invoices/update/' +
+                $scope.invoicedata1._id, $scope.invoicedata1).success(
                 function (response) {
                     console.log(response);
                     window.location.href = '/#invoices';
                 }
             );
-            */
+
         };
 
         $scope.removeInvoice = function(id1) {

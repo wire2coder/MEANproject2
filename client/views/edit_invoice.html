@@ -10,9 +10,9 @@
 
     <div class="form-group">
         <label>Customer</label>
-        <select class="form-control">
+        <select class="form-control" ng-model="invoicedata1.customer._id">
             <option ng-repeat="customer in customers" value="{{customer._id}}">
-                {{customer.first_name}} {{customer.last_name}}
+                {{customer._id}} {{customer.last_name}}
             </option>
         </select>
 

@@ -30,8 +30,7 @@ myApp.controller('CustomersController', ['$scope', '$http','$location','$routePa
 	}
 
 	$scope.updateCustomer = function(){
-		$http.put('/api/customers/'+$scope.customer._id,$scope.customer)
-            .success(function(response){
+		$http.put('/api/customers/'+$scope.customer._id,$scope.customer).success(function(response){
 			window.location.href='/#customers';
 		});
 	}

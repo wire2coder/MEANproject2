@@ -31,7 +31,7 @@ module.exports = Invoice;
 // Get all invoices
 module.exports.getInvoices = function (callback, limit) {
     // Mongoose command
-    Invoice.find(callback).limit(limit);
+    Invoice.find(callback).limit(limit).populate('customer');
 };
 
 // Get 1 invoice

@@ -10,12 +10,15 @@ var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(function ($routeProvider) {
 
-    // localhost:3000/#customers
-    $routeProvider
-        .when('/customers', {
-        controller: 'CustomersController',
-        templateUrl: 'views/customers.html'
+    $routeProvider.when('/', {
+        controller: 'DashboardController',
+        templateUrl: 'views/dashboard.html'
     })
+        // localhost:3000/#customers
+        .when('/customers', {
+            controller: 'CustomersController',
+            templateUrl: 'views/customers.html'
+        })
 
         .when('/customers/add', {
             controller: 'CustomersController',
