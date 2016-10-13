@@ -7,6 +7,7 @@
                 <th>#</th>
                 <th>Service</th>
                 <th>Price</th>
+                <th>Due</th>
                 <th>Status</th>
                 <th>Created On</th>
             </tr>
@@ -20,9 +21,9 @@
                 <td>{{invoice.status}}</td>
                 <td>{{invoice.createdAt}}</td>
                 <td>
-                    <a href="" class="btn btn-primary">Detail</a>
-                    <a href="" class="btn btn-default">Edit</a>
-                    <button class="btn btn-danger">Delete</button>
+                    <a href="/#invoices/{{invoice._id}}" class="btn btn-primary">Detail</a>
+                    <a href="/#invoices/edit/{{invoice._id}}" class="btn btn-default">Edit</a>
+                    <button ng-click="removeInvoice(invoice._id)" class="btn btn-danger">Delete</button>
                 </td>
             </tr>
         </tbody>

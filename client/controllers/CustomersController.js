@@ -22,7 +22,12 @@ myApp.controller('CustomersController', ['$scope', '$http', '$location', '$route
         };
 
         $scope.addCustomer = function () {
-            console.log($scope.customerdata1);
+            $http.post('/api/customers', $scope.customerdata1).success(
+                function (response) {
+                    console.log('CustomersController.js: a customer was added');
+                    window.location.href = '/#customers';
+                }
+            );
         };
 
         $scope.updateCustomer = function () {

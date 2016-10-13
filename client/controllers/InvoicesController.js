@@ -10,6 +10,17 @@ myApp.controller('InvoicesController', ['$scope', '$http', '$location', '$routeP
             });
         };
 
+        $scope.getInvoice = function () {
+            var id1 = $routeParams.id1;
+
+            $http.get('/api/invoices/' + id1).success(function (response) {
+                //console.log(response);
+                $scope.invoicedata1 = response;
+
+                $scope.invoicedata1.customer_id = response.customer._id;
+            });
+        };
+
         $scope.addInvoice = function () {
             $http.post('/api/invoices', $scope.invoicedata1).success(function (response) {
                 console.log('InvoicesController: An invoice was added');
@@ -22,6 +33,30 @@ myApp.controller('InvoicesController', ['$scope', '$http', '$location', '$routeP
                 $scope.customers = response;
             });
         };
+
+        $scope.updateInvoice = function () {
+
+            console.log($scope.invoicedata1);
+
+            /*
+            $http.put('/api/invoices/update/' + $scope.invoicedata1._id, $scope.invoicedata1).success(
+                function (response) {
+                    console.log(response);
+                    window.location.href = '/#invoices';
+                }
+            );
+            */
+        };
+
+        $scope.removeInvoice = function(id1) {
+
+            $http.delete('/api/invoices/' + id1).success(
+                function () {
+                    console.log('InvoicesController: an invoice was deleted');
+                    window.location.href = '/#invoices';
+                }
+            );
+        }
 
     }
 ]);

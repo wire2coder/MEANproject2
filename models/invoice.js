@@ -39,7 +39,7 @@ module.exports.getInvoice = function (id1, callback) {
     var query = {_id: id1};
 
     // Mongoose command
-    Invoice.findOne(query, callback);
+    Invoice.findOne(query, callback).populate('customer');
 };
 
 // Add an invoice
