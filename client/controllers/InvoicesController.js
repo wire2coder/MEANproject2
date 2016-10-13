@@ -6,7 +6,7 @@ myApp.controller('InvoicesController', ['$scope', '$http', '$location', '$routeP
 
         $scope.getInvoices = function () {
             $http.get('/api/invoices').success(function (response) {
-                console.log(response);
+                //console.log(response);
                 $scope.invoices = response;
             });
         };
@@ -16,7 +16,7 @@ myApp.controller('InvoicesController', ['$scope', '$http', '$location', '$routeP
 
 
             $http.get('/api/invoices/' + id1).success(function (response) {
-                console.log(response);
+                //console.log(response);
                 $scope.invoicedata1 = response;
                 $scope.customer_id1 = response.customer._id;
             });
@@ -40,7 +40,7 @@ myApp.controller('InvoicesController', ['$scope', '$http', '$location', '$routeP
             $http.put('/api/invoices/update/' +
                 $scope.invoicedata1._id, $scope.invoicedata1).success(
                 function (response) {
-                    console.log(response);
+                    //console.log(response);
                     window.location.href = '/#invoices';
                 }
             );
